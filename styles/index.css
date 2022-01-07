@@ -1,8 +1,12 @@
-@import "tailwindcss/base";
+/*@import "tailwindcss/base";
 
 @import "tailwindcss/components";
 
-@import "tailwindcss/utilities";
+@import "tailwindcss/utilities";*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @font-face {
   font-family: "marker";
@@ -10,4 +14,26 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
+}
+
+@layer components {
+  .wow-yellow-txt {
+    @apply  font-bold tracking-tighter;
+    -webkit-text-stroke-width: 1.40px;
+    -webkit-text-stroke-color: black;
+    color: #F6C308;
+    font-family: Tahoma   ;
+  }
+
+  .wow-btn {
+    @apply  text-center  align-middle rounded-lg;
+    background-color: #6C0202;
+    outline-color: #5E6A68;   
+  }
+
+  .wow-btn-border {
+    @apply border-2 border-black rounded-lg outline outline-2 blur-[0.5px];
+    outline-color: #5E6A68;   
+ 
+  }
 }

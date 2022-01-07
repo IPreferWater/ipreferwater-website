@@ -1,10 +1,10 @@
 module.exports = {
   //mode: 'jit',
-  purge: [
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
-  ],
-  darkMode: false, // or 'media' or 'class'
+  content: [
+    // Example content paths...    
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+   ],
   theme: {
     extend: {
       colors: {
@@ -14,12 +14,6 @@ module.exports = {
       fontFamily: {
         marker: ['marker']
       },
-    },
-  },
-  variants: {
-    extend: {
-      // https://dev.to/mtownsend5512/revealing-hidden-elements-when-hovering-a-parent-with-tailwind-css-159a
-      visibility: ["group-hover"]
     },
   },
   plugins: [],
