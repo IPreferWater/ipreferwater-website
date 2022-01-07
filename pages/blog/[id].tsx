@@ -25,7 +25,7 @@ export default function Post({ postData }) {
           <div className="flex flex-col">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div>{getComponent(postData.component)}</div>
+              <div className='m-auto bg-red-100'>{getComponent(postData.component)}</div>
         </div>
       </Layout>
     )

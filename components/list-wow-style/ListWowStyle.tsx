@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import {Input} from './Input';
+import {BtnWowStyle} from './BtnWowStyle';
 
 interface State {
     curl: string
@@ -18,17 +19,22 @@ class ListWowStyle extends Component {
 render() {
 
     return (
-      <div className="w-96 h-full bg-gray-600">
+      <div className="w-96 h-screen relative bg-[url('/blog/list-wow-style/bg.png')]" >
+
+  <div className='absolute inset-0 w-full h-full bg-black bg-opacity-70'></div>
           <div className="flex flex-col">
-              <div className='relative'>
-              <div className='w-[180px] m-auto wow-yellow-txt wow-btn text-2xl pb-[3px]'>Projects</div>
-              <div className='w-[180px] absolute h-full top-0 right-[100px] wow-btn-border'></div>
-              </div>
+
+              <BtnWowStyle title='Projects'/>
          
-         <Input nameCharacter="project's name" level='quick description for the project' server='3 / 12 / 2022'/>
-         <Input nameCharacter="project's name" level='quick description for the project' server='3 / 12 / 2022'/>
-         <Input nameCharacter="project's name" level='quick description for the project' server='3 / 12 / 2022'/>
+         <Input nameCharacter="project's name A" level='quick description for the project A' server='2 / 12 / 2022'/>
+         <Input nameCharacter="project's name B" level='quick description for the project B' server='22 / 02 / 2021'/>
+         <Input nameCharacter="project's name C" level='quick description for the project C' server='11 / 11 / 2020'/>
+
+
          </div>
+         <div className='relative -bottom-[120px]'>
+<BtnWowStyle title='Choose a Project'/>
+</div>
       </div>
     )}
   
