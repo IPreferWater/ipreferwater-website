@@ -22,10 +22,10 @@ export default function Post({ postData }) {
 
     return (
       <Layout>
-          <div className="flex flex-col">
+          <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div className='m-auto bg-red-100'>{getComponent(postData.component)}</div>
+              <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
     )

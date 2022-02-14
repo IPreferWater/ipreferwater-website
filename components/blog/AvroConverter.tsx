@@ -10,7 +10,8 @@ class AvroConverter extends Component {
         curl:"",
         schemaRegistryUrl: "",
         schemaName: "",
-        schema : ""
+        schema : "",
+        valid: true
 
     }
 
@@ -58,12 +59,38 @@ class AvroConverter extends Component {
         return false;
     };
 
+    onChangeSchemaRegistryUrl = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const schemaRegistryUrl = event.target.value;
+        this.setState({schemaRegistryUrl : schemaRegistryUrl}, () => {
+            this.buildCurl();
+        });
+    }
+
+    onChangeSchemaRegistryName = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const schemaRegistryName = event.target.value;
+        this.setState({schemaName : schemaRegistryName}, () => {
+            this.buildCurl();
+        });
+    }
+
      inputHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
       
         const str = event.target.value;
+
+        if (str === "") {
+            this.setState({valid : true}, () => {
+              
+            });
+            return;
+        }
         const json = this.tryParseJSONObject(str)
+
+        
          if (json == false) {
              console.log("set color to red");
+             this.setState({valid : false}, () => {
+              
+            });
            return;
          }
    
@@ -71,7 +98,7 @@ class AvroConverter extends Component {
         const strStringify = JSON.stringify(json);
         const schemaParsed = strStringify.replaceAll('"', '\\"')
         
-        this.setState({schema : schemaParsed}, () => {
+        this.setState({schema : schemaParsed, valid : true}, () => {
             this.buildCurl();
         });
         
@@ -80,24 +107,37 @@ class AvroConverter extends Component {
 render() {
 
     return (
-      <div>
-          <div>
+        <div className='flex flex-col'>
+            {!this.state.valid  &&        
+          <div className='text-red-400 font-bold text-center text-4xl'>your json is invalid</div>}
+
+      <div className='flex flex-row'>
+          
+          <div className='md:w-1/2 py-10 mx-4'>
             <form>
-              <label className="text-pink-300">
-                Name:
-                <textarea onChange={this.inputHandler} />
+            <input type="url" className="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" placeholder="schema-registry url"
+            onChange={this.onChangeSchemaRegistryUrl} />
+
+            <input className="shadow appearance-none border rounded w-4/5 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" type="text" placeholder="schema-registry name"
+            onChange={this.onChangeSchemaRegistryName} />
+
+              <label className="">
+                <textarea className='shadow-md resize-none w-4/5 h-screen' onChange={this.inputHandler} />
               </label>
-              <input type="submit" value="Submit" />
             </form>
             </div>
-                {this.state.curl}
-            <div>
+                
+            <div className='md:w-1/2'>
+            <div className={`border-4  w-full h-full ${this.state.valid ? "border-green-400" : "border-red-400 text-gray-500"} `}>
+            {this.state.curl}
+            </div>
             
-               
 
             </div>
 
 
+
+      </div>
 
       </div>
     )}
