@@ -10,15 +10,10 @@ type IndexProps = {
 
   return (<Layout title="Home | Next.js + TypeScript Example">
     <h1>Blog</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
     {posts.map(({ id, date, title }) => (
-            <Link href={`/blog/${id}`}>
+            <Link  key={id} href={`/blog/${id}`}>
               <a className="underline decoration-sky-500">
-            <li key={id}>
+            <li>
          {title} {date}
       </li>
       </a>
@@ -30,7 +25,6 @@ type IndexProps = {
 
 export async function getStaticProps() {
   const posts = getSortedPostsData() as Post[]
-  console.log(posts)
   return {
     props: {
       posts
