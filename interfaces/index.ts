@@ -9,6 +9,14 @@ export type User = {
   name: string
 }
 
+export type Post = {
+  id: string,
+  title: string
+date: string
+component: string
+description: string
+}
+
 export type Product = {
   name: string
   price: number

@@ -1,23 +1,25 @@
 import Link from 'next/link'
 import Layout from '../components/Layout'
 import { getSortedPostsData } from '../pages/api/blog'
+import { Post } from '../interfaces/index'
 
-//const IndexPage = () => (
-  export default function IndexPage({ allPostsData }) {
+type IndexProps = {
+  posts: Post[]
+}
+  export default function IndexPage({ posts } : IndexProps) {
 
   return (<Layout title="Home | Next.js + TypeScript Example">
-    <h1>Hello Next.js 👋</h1>
+    <h1>Blog</h1>
     <p>
       <Link href="/about">
         <a>About</a>
       </Link>
     </p>
-
-    {allPostsData.map(({ id, date, title, component }) => (
+    {posts.map(({ id, date, title }) => (
             <Link href={`/blog/${id}`}>
-              <a className="underline decoration-blue">
+              <a className="underline decoration-sky-500">
             <li key={id}>
-        {id} {title} {date}
+         {title} {date}
       </li>
       </a>
           </Link>
@@ -27,10 +29,11 @@ import { getSortedPostsData } from '../pages/api/blog'
 }
 
 export async function getStaticProps() {
-  const allPostsData = getSortedPostsData()
+  const posts = getSortedPostsData() as Post[]
+  console.log(posts)
   return {
     props: {
-      allPostsData
+      posts
     }
   }
 }
