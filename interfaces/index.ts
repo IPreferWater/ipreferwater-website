@@ -15,6 +15,7 @@ export type Post = {
 date: string
 component: string
 description: string
+category: string
 }
 
 export type Product = {
