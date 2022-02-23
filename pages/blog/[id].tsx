@@ -25,15 +25,15 @@ export default function Post({ postData }) {
           <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
+              <div dangerouslySetInnerHTML={{__html:postData.content}}/>
               <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
     )
   }
 
-
 export async function getStaticProps({ params }) {
-    const postData = getPostData(params.id)
+    const postData = getPostData(params.id)  
     return {
       props: {
         postData
