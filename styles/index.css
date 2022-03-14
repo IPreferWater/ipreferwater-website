@@ -23,4 +23,12 @@
     -webkit-text-stroke-color: black;
     font-family: Tahoma;
   }
+
+  .blog-article>h1 {
+    @apply  underline decoration-sky-500 decoration-2 text-2xl;
+  }
+
+  .blog-article>h2 {
+    @apply  underline decoration-sky-300 decoration-2 text-xl;
+  }
 }
