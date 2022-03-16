@@ -5,15 +5,15 @@ description: 'my tokyo guide'
 category: 'irl'
 ---
   
-<h1>Shibuya</h1>
-<p>
-I think you already have full list a cool stuff here  ( <a href="https://www.google.com/maps/place/Uobei+Shibuya+Dougenzaka/@35.6594417,139.6968182,288m/data=!3m1!1e3!4m9!1m2!2m1!1sshibuya+sushi+rail!3m5!1s0x60188ca9c3e93569:0x51b1ecd6fe7ee73f!8m2!3d35.6594417!4d139.6979125!15sChJzaGlidXlhIHN1c2hpIHJhaWxaFCISc2hpYnV5YSBzdXNoaSByYWlskgEXY2FzdWFsX3N1c2hpX3Jlc3RhdXJhbnSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTnZkVTFmVmtabkVBRQ">sushi on railway</a>, cross-path, disney store, ichiran-ramen ...) But here is a few things that would be sad to miss
-</p>
+# Shibuya
+
+I think you already have full list a cool stuff here  ([sushi on railway](https://www.google.com/maps/place/Uobei+Shibuya+Dougenzaka/@35.6594417,139.6968182,288m/data=!3m1!1e3!4m9!1m2!2m1!1sshibuya+sushi+rail!3m5!1s0x60188ca9c3e93569:0x51b1ecd6fe7ee73f!8m2!3d35.6594417!4d139.6979125!15sChJzaGlidXlhIHN1c2hpIHJhaWxaFCISc2hpYnV5YSBzdXNoaSByYWlskgEXY2FzdWFsX3N1c2hpX3Jlc3RhdXJhbnSaASNDaFpEU1VoTk1HOW5TMFZKUTBGblNVTnZkVTFmVmtabkVBRQ), cross-path, disney store, ichiran-ramen ...) But here is a few things that would be sad to miss
+
   
-<h2>Tokyu-Hands</h2>
+##Tokyu-Hands
     
 
-<p>A fun <a href="https://www.google.com/maps/place/Tokyu+Hands/@35.662038,139.6957432,577m/data=!3m2!1e3!5s0x60188ca915ffaf3d:0x116151eaae0db63f!4m12!1m6!3m5!1s0x60188ca916447249:0x13ff108bf95bcbf1!2sTokyu+Hands!8m2!3d35.6620337!4d139.6979319!3m4!1s0x60188ca916447249:0x13ff108bf95bcbf1!8m2!3d35.6620337!4d139.6979319">shop to discover</a>, prices are OK and with it's 7th floor, It's a good place to find present to all your familly . No doubt you will find funny things like "dry ice-cream for cosmonautes" or an ephemeral shop with a local artist seelings his draws .</p>
+A fun [shop to discover](https://www.google.com/maps/place/Tokyu+Hands/@35.662038,139.6957432,577m/data=!3m2!1e3!5s0x60188ca915ffaf3d:0x116151eaae0db63f!4m12!1m6!3m5!1s0x60188ca916447249:0x13ff108bf95bcbf1!2sTokyu+Hands!8m2!3d35.6620337!4d139.6979319!3m4!1s0x60188ca916447249:0x13ff108bf95bcbf1!8m2!3d35.6620337!4d139.6979319), prices are OK and with it's 7th floor, It's a good place to find present to all your familly . No doubt you will find funny things like "dry ice-cream for cosmonautes" or an ephemeral shop with a local artist seelings his draws .
 
   
 <h2>Mandarake</h2>
