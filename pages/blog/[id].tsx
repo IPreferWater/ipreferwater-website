@@ -8,9 +8,10 @@ import ListWowStyle from '../../components/list-wow-style/ListWowStyle';
 import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import {unified} from 'unified'
+import { Post } from '../../interfaces/index'
 
 
-export default function Post(postData:string) {
+export default function Post(postData:Post) {
     function getComponent(componentName: string) {
         switch (componentName) {
             case 'avro-to-schema-curl':
