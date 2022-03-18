@@ -11,7 +11,7 @@ import {unified} from 'unified'
 import { Post } from '../../interfaces/index'
 
 
-export default function Post(postData:Post) {
+export default function Post(postData:Post, content:string) {
     function getComponent(componentName: string) {
         switch (componentName) {
             case 'avro-to-schema-curl':
@@ -31,7 +31,7 @@ export default function Post(postData:Post) {
           <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div className='prose prose-xl max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:postData.content}}/>
+              <div className='prose prose-xl max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:content}}/>
               <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
@@ -48,11 +48,12 @@ export async function getStaticProps(params:any) {
     .process(postData.content)
     
     //set the html instead of the markdown
-    postData.content = String(parsed)
+    const content = String(parsed)
     
     return {
       props: {
-        postData
+        postData,
+        content
       }
     }
   }
