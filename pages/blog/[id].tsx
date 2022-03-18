@@ -8,10 +8,14 @@ import ListWowStyle from '../../components/list-wow-style/ListWowStyle';
 import remarkParse from 'remark-parse'
 import remarkHtml from 'remark-html'
 import {unified} from 'unified'
-import { Post } from '../../interfaces/index'
+import { Post } from '../../interfaces';
 
+type BlogProps = {
+  postData: Post,
+  content: string
+}
 
-export default function Post(postData:Post, content:string) {
+export default function BlogPost({postData,content}:BlogProps) {
     function getComponent(componentName: string) {
         switch (componentName) {
             case 'avro-to-schema-curl':
@@ -38,8 +42,10 @@ export default function Post(postData:Post, content:string) {
     )
   }
 
+
 export async function getStaticProps(params:any) {
-    const postData = getPostData(params.id)  
+  //TODO
+    const postData = getPostData(params.params.id)  
 
     //parse markdown to html
     const parsed = await unified()
