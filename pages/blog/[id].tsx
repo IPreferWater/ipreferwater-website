@@ -10,7 +10,7 @@ import remarkHtml from 'remark-html'
 import {unified} from 'unified'
 
 
-export default function Post({ postData }) {
+export default function Post(postData:string) {
     function getComponent(componentName: string) {
         switch (componentName) {
             case 'avro-to-schema-curl':
@@ -30,14 +30,14 @@ export default function Post({ postData }) {
           <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div className='prose prose-sm max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:postData.content}}/>
+              <div className='prose prose-xl max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:postData.content}}/>
               <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
     )
   }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(params:any) {
     const postData = getPostData(params.id)  
 
     //parse markdown to html
