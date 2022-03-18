@@ -19,12 +19,13 @@ class ListWowStyle extends Component {
 render() {
 
     return (
-      <div className="w-96 h-screen relative bg-[url('/blog/list-wow-style/bg.png')]" >
+      <div className="w-96  relative bg-[url('/blog/list-wow-style/bg.png')]" >
 
   <div className='absolute inset-0 w-full h-full bg-black bg-opacity-70'></div>
           <div className="flex flex-col">
-
+                <div className='my-6'>
               <BtnWowStyle title='Projects'/>
+              </div>
          
          <Input nameCharacter="project's name A" level='quick description for the project A' server='2 / 12 / 2022'/>
          <Input nameCharacter="project's name B" level='quick description for the project B' server='22 / 02 / 2021'/>
@@ -32,9 +33,15 @@ render() {
 
 
          </div>
-         <div className='relative -bottom-[120px]'>
-<BtnWowStyle title='Choose a Project'/>
-</div>
+
+
+             <div className='py-6'>
+             <BtnWowStyle title='Choose a Project'/>
+             </div>
+         
+
+
+
       </div>
     )}
   
