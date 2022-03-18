@@ -2,10 +2,11 @@ import Link from 'next/link'
 import Layout from '../components/Layout'
 
 import { getSortedPostsData } from '../pages/api/blog'
+import { Post } from '../interfaces/index'
 
 //todo I should have separate space for "blog" and "projects"
     //todo should I use title instead of create a useless value component inside .md ?
-    export default function Blog({ allPostsData }) {
+    export default function Blog(allPostsData: Post[]) {
 
 
 
