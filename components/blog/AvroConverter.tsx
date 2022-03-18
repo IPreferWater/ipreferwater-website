@@ -28,7 +28,7 @@ class AvroConverter extends Component {
         const curl = `curl --location --request POST '${this.state.schemaRegistryUrl}/subjects/${this.state.schemaName}/versions' \
         --header 'Content-Type: application/json' \
         --data-raw '{
-               ${this.state.schema}
+               "schema": "${this.state.schema}"
             }'`
 
             copyState.curl = curl
