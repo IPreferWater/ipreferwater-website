@@ -30,8 +30,7 @@ export default function Post({ postData }) {
           <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div className='prose prose-a:underline prose-a:decoration-sky-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:postData.content}}/>
-              {/*<div className='prose'>{postData.content} </div>*/}
+              <div className='prose prose-sm max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:postData.content}}/>
               <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
