@@ -35,7 +35,7 @@ export default function BlogPost({postData,content}:BlogProps) {
           <div className="flex flex-col w-full">
               <div>{postData.title}</div>
               <div>{postData.date}</div>
-              <div className='prose prose-xl max-w-none mx-auto prose-img:max-w-sm prose-img:max-h-60 prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:content}}/>
+              <div className='prose prose-xl max-w-none mx-auto prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2' dangerouslySetInnerHTML={{__html:content}}/>
               <div >{getComponent(postData.component)}</div>
         </div>
       </Layout>
