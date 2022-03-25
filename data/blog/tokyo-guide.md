@@ -2,7 +2,7 @@
 title: 'tokyo guide'
 date: '2022-02-23'
 description: 'my tokyo guide'
-category: 'irl'
+category: 'irl japan'
 ---
   
 # Shibuya

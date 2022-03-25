@@ -16,6 +16,7 @@ date: string
 component: string
 description: string
 category: string
+icon: string
 }
 
 export type Product = {
