@@ -45,79 +45,104 @@ Everytimes an insect go near the scanner, it will get
 As we know the format of the data, we can use [Avro](https://avro.apache.org/) format to securise & speed up our streaming
 
 schema-key 
+schema-value TODO put github url
+(this one too, to be using with kafka connect later)
+
+we need to post this on the schema-registry
 ```
-{
-    "type": "record",
-    "name": "DataKey",
-    "namespace": "ipreferwater.todo",
-    "fields": [
-      {
-        "name": "hive_id",
-        "type": "int",
-        "doc": "unique ID of the hive where we had the detection"
-      },
-      {
-        "name": "direction",
-        "type": "boolean",
-        "doc": "true mean the detected object is considered entering, false going out"
-      }
-    ]
-  }
+post SCHEMA_REGISTRY_URL/subjects/SCHEMA_NAME/versions { "schema": "YOUR_SCHEMA_ESCAPED"}
+```
+! please use the schema name : **"detected-key"** & **""detected-value**
+to get the expected format you can go on my avro-converter, it will transform your avro-schema to a curl usable with the schema-registry
+
+response should be an ID
+```
+{"id": 1}
 ```
 
-schema-value
-
-```
-{
-    "type": "record",
-    "name": "DataValue",
-    "namespace": "ipreferwater.todo",
-    "fields": [
-      {
-        "name": "colors",
-        "type": {
-            "type": "map",
-            "values" : "double"
-          },
-        "doc": "map with the percentage of color found on the object detected"
-      },
-      {
-        "name": "size",
-        "type": "double",
-        "doc": "size in mm of the object detected"
-      },
-      {
-        "name": "has_wings",
-        "type": "boolean",
-        "doc": "do the detected object as wings"
-      }
-    ]
-  }
-```
-
-Later, we will filter on the insect type "european bee"
+TODO url collection
 
 
 #### start
 
-In code, you can adjust
-- how much hives you'll have (l69)
-```
-hivesCoordinates := [4]coordinate{
-		{
-			x: 160,
-			y: 100,
-		},
-```
--  how many bees will come and leave your hives & how many wasp will come to kill your bees
-``` (l39)
-func createNewHive(id, beesToAdd, beesToRemove, waspsToAdd int, x, y float64) Hive {
-```
--  how many asian-wasp will come to kill your bees
 
-OK, now start the program !
+OK, now start the program ! in the go folder
 ```
 go run .
 ```
 
-Now let's verify our scanner is working.
+Now let's verify our scanner is working in Akhq.
+
+```
+localhost:8085
+```
+in the topics page
+![akhq kafka](/blog/kafka-bees/akhq_kafka.png)
+
+if you click on topic **detected**
+![akhq detected](/blog/kafka-bees/akhq_detected.png)
+
+if you click on topic **european-bee**
+![akhq european bee](/blog/kafka-bees/akhq_european-bee.png)
+the topic **detected** contain the data scanned
+
+## OK but what's happening ?
+
+Our scanned detected something to be scanned, he send the data to the [producer](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/producer.go)
+
+The **producer** will publish on topic **detected** but he needs the avro-schema
+
+He will [ask](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L11) for the schemas and [encode](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L11) the data to avro-format
+
+He [publishes](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/producer.go#L110) the kafka-message and now we can see it on AKHQ on the topic **detected**
+
+The **schema** tab on AKHQ represent the schema'ID you received when you posted it
+
+
+
+We also have a [consumer](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/consumer.go) that read the messages from **detected**
+On the AKHQ topics page, this is the consumer lag. How many messages the consumer still have to read.
+
+He [decode](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L58) the message and [obtain](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L90) the schema ID, now he knows what's the expected format and can construct the object
+
+Once we have it, we can try to [guess](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L6) wich kind on insect it is, in this scenario, if it's an european-bee, we [publish](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L13) it to the topic **eurpean-bee** otherwise we just [write an alert](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L26) on the console
+
+
+Ok, now we would like to store this bees in a database to make statistic.
+But is there something quick ? [kafka-connect](https://www.confluent.io/fr-fr/blog/kafka-connect-tutorial/)
+
+### Kafka-connect
+
+start the services
+```
+docker-compose up kafka-connect
+```
+for the database
+```
+docker-compose up -d postgres
+docker-compose up -d adminer
+```
+
+post the [configuration](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/kafka-connect/connector-config-dev.json)
+```
+post KAFKA_CONNECT_URL/connectors/CONFIG_NAME/CONFIG { YOUR_CONFIG }
+```
+
+visit [Adminer](https://www.adminer.org/)
+```
+localhost:8080
+```
+
+on authentification page enter the informations from [the docker-compose](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/docker-compose.yml#L91)
+
+```
+System :Postgres
+Server :postgres
+User :beekeeper	
+Password :beepassword
+Database :bees	
+```
+
+You should see all your bees stored an available for any SQL request
+
+![adminer bees](/blog/kafka-bees/adminer.png)
