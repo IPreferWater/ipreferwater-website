@@ -36,7 +36,6 @@ class AvroConverter extends Component {
             
 
             this.setState(copyState)
-            console.log(curl)
 
     }
 
@@ -87,7 +86,6 @@ class AvroConverter extends Component {
 
         
          if (json == false) {
-             console.log("set color to red");
              this.setState({valid : false}, () => {
               
             });

@@ -1,8 +1,9 @@
 ---
 title: 'tokyo guide'
-date: '2022-02-23'
+date: '2022-03-01'
 description: 'my tokyo guide'
 category: 'irl japan'
+icon: '/blog/tokyo-guide/icon.webp'
 ---
   
 # Shibuya

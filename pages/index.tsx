@@ -40,7 +40,6 @@ type IndexProps = {
 
 export async function getStaticProps() {
   const posts = getSortedPostsData() as Post[]
-  console.log(posts)
   return {
     props: {
       posts

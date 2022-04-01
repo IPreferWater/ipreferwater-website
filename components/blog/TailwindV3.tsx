@@ -37,7 +37,6 @@ class TailwindV3News extends Component {
 
 
   onChangeColumn = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log(event.target.value)
     this.setState({ column: event.target.value }, () => {
     });
   };
@@ -48,7 +47,6 @@ class TailwindV3News extends Component {
   };
 
   onChangeIndent = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    console.log("new value "+event.target.value)
     this.setState({ indent: event.target.value }, () => {
     });
   };
@@ -249,7 +247,6 @@ class TailwindV3News extends Component {
           <select name="indent-select" id="indent-select" onChange={this.onChangeIndent}>
             {
             this.indentValues.map(value => {
-              console.log(value)
                return <option key={value} value={value} className='bg-red-100'>{value}</option>;
             })
             }

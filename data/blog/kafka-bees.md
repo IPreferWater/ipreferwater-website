@@ -1,13 +1,16 @@
 ---
 title: 'kafka bees'
-date: '2020-03-25'
+date: '2022-04-01'
 description: 'monitoring your hives with kafka'
-category: 'code'
+category: 'code kafka golang'
+icon: '/blog/kafka-bees/icon.webp'
 ---
 
 ### Functionnal Explications
-In this github example you can find an application to monitore your hives
+In this [github](https://github.com/IPreferWater/kafka-bees) you can find an application to monitore your hives.
+
 Lets imagine you have a scanner in the entry of the hive that give you data of what's scanned
+
 This scanner stream the data to your kafka broker and you can handle your scenarios
 
 In this project, the informations we are handling are
@@ -37,31 +40,34 @@ this will start [zookeeper](https://zookeeper.apache.org/), [schema-registry](ht
 
 #### schema-registry
 
+The schema-registry will host the format of our value in [Avro format](https://avro.apache.org/). This will securise our data and thanks to the encoding speed the stream.
+
+##### what our value will look like ?
+
 Everytimes an insect go near the scanner, it will get 
 - a hashmap of the colors in format ["color_name"]percentage
 - the size scanned 
 - the direction (entering or leaving)
 - if wings have been detected (could be usefull for making alert on bear paws ...)
-As we know the format of the data, we can use [Avro](https://avro.apache.org/) format to securise & speed up our streaming
 
-schema-key 
-schema-value TODO put github url
+We can deduct the ["schema-key"](https://github.com/IPreferWater/kafka-bees/blob/master/schema-registry/data-key.json) & ["schema-value"](https://github.com/IPreferWater/kafka-bees/blob/master/schema-registry/data-value.json)
+
+You can insert now the [european-bee-value](https://github.com/IPreferWater/kafka-bees/blob/master/schema-registry/european-bee-value.json) it will be usefull for the kafka-connect later
 (this one too, to be using with kafka connect later)
 
-we need to post this on the schema-registry
+to post this on the schema-registry we use the api
 ```
 post SCHEMA_REGISTRY_URL/subjects/SCHEMA_NAME/versions { "schema": "YOUR_SCHEMA_ESCAPED"}
 ```
-! please use the schema name : **"detected-key"** & **""detected-value**
-to get the expected format you can go on my avro-converter, it will transform your avro-schema to a curl usable with the schema-registry
+> ! The schema's ["names are hardcoded"](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/producer.go#L152)
+>   please use the schema name : **"detected-key"**, **""detected-value** & **""european-bean-value**.<blockquote>
+
+to build your api request can go on my [avro-converter](/blog/avro-schema-to-curl), it will transform your avro-schema to a curl usable with the schema-registry or you can import the postman-collecttion TODO url
 
 response should be an ID
 ```
 {"id": 1}
 ```
-
-TODO url collection
-
 
 #### start
 
@@ -77,13 +83,13 @@ Now let's verify our scanner is working in Akhq.
 localhost:8085
 ```
 in the topics page
-![akhq kafka](/blog/kafka-bees/akhq_kafka.png)
+![akhq kafka](/blog/kafka-bees/akhq_kafka.webp)
 
 if you click on topic **detected**
-![akhq detected](/blog/kafka-bees/akhq_detected.png)
+![akhq detected](/blog/kafka-bees/akhq_detected.webp)
 
 if you click on topic **european-bee**
-![akhq european bee](/blog/kafka-bees/akhq_european-bee.png)
+![akhq european bee](/blog/kafka-bees/akhq_european-bee.webp)
 the topic **detected** contain the data scanned
 
 ## OK but what's happening ?
@@ -98,15 +104,17 @@ He [publishes](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabe
 
 The **schema** tab on AKHQ represent the schema'ID you received when you posted it
 
+![kafka schema producer](/blog/kafka-bees/kafka_schema_1.webp)
 
+We also have a [consumer](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/consumer.go) that read the messages from the topic **detected** 
 
-We also have a [consumer](https://github.com/IPreferWater/kafka-bees/blob/master/go/kafkabee/consumer.go) that read the messages from **detected**
-On the AKHQ topics page, this is the consumer lag. How many messages the consumer still have to read.
+On the AKHQ topics page, this is the consumer lag (How many messages the consumer still have to read).
 
 He [decode](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L58) the message and [obtain](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/schema_registry.go#L90) the schema ID, now he knows what's the expected format and can construct the object
 
 Once we have it, we can try to [guess](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L6) wich kind on insect it is, in this scenario, if it's an european-bee, we [publish](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L13) it to the topic **eurpean-bee** otherwise we just [write an alert](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/go/kafkabee/guess.go#L26) on the console
 
+![kafka schema consumer](/blog/kafka-bees/kafka_schema_2.webp)
 
 Ok, now we would like to store this bees in a database to make statistic.
 But is there something quick ? [kafka-connect](https://www.confluent.io/fr-fr/blog/kafka-connect-tutorial/)
@@ -117,15 +125,15 @@ start the services
 ```
 docker-compose up kafka-connect
 ```
-for the database
+we stock the data in a postgres database
 ```
 docker-compose up -d postgres
 docker-compose up -d adminer
 ```
 
-post the [configuration](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/kafka-connect/connector-config-dev.json)
+We need to post a [configuration](https://github.com/IPreferWater/kafka-bees/blob/15b7d9c414fe8a7f5e36f6c901f57b4bd888fce3/kafka-connect/connector-config-dev.json) TODO postman collection
 ```
-post KAFKA_CONNECT_URL/connectors/CONFIG_NAME/CONFIG { YOUR_CONFIG }
+post KAFKA_CONNECT_URL/connectors/CONFIG_NAME/config { YOUR_CONFIG }
 ```
 
 visit [Adminer](https://www.adminer.org/)
@@ -145,4 +153,4 @@ Database :bees
 
 You should see all your bees stored an available for any SQL request
 
-![adminer bees](/blog/kafka-bees/adminer.png)
+![adminer bees](/blog/kafka-bees/adminer.webp)
