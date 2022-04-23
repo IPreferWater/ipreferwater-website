@@ -1,7 +1,7 @@
 ---
 title: 'server side rendering'
 date: '2022-05-01'
-description: 'server side rendering'
+description: 'build your website on server'
 category: 'code ssr nextjs'
 icon: '/blog/ssr/icon.webp'
 ---
