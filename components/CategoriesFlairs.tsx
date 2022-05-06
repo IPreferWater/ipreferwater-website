@@ -27,7 +27,7 @@ const color = getCategoryColor(firstCategory)
 
 return <div className='flex flex-row space-x-2'>    
 {categories.split(" ").map((category) =>(
-        <div className={`${color} rounded-xl p-1 text-white`}>{category}</div>
+        <div key={category} className={`${color} rounded-xl p-1 text-white`}>{category}</div>
     ))}
 </div>
 }
