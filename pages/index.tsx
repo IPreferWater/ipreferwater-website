@@ -9,16 +9,15 @@ type IndexProps = {
 }
   export default function IndexPage({ posts } : IndexProps) {
 
-    function getIconUrl(u: string): string {
-      if (u!="" && u!= null){
-        return u
+    function getIconUrl(url: string): string {
+      if (url!="" && url!= null){
+        return url
       }
       return "example.png"
     }
 
 
-  return (<Layout title="Home | Next.js + TypeScript Example">
-    <h1>Blog</h1>
+  return (<Layout title="IPreferWater's Blog">
     {posts.map(({ id, date, title, description, category, icon }) => (
             <Link  key={id} href={`/blog/${id}`}>
               <a className="flex flex-col md:flex-row bg-gray-100 md:justify-between shadow-md m-4 p-2">

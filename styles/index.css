@@ -35,4 +35,16 @@
   .blog-article > a {
     @apply underline decoration-sky-500 decoration-2 text-2xl hover:text-blue-800 visited:text-purple-600;
   }
+
+  .background-grid-green {
+    background-image: url(grid_green_squares.svg);
+    background-repeat: repeat;
+    background-size: 22px 22px;
+  }
+
+  .background-gray-green {
+    background-image: url(grid_gray_squares.svg);
+    background-repeat: repeat;
+    background-size: 8px 8px;
+  }
 }
