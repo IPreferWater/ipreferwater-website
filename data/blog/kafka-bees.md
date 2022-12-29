@@ -25,7 +25,7 @@ Kafka to stream the data
 
 ### Technicals explications
 
-#### requierements
+#### requirements
 you need
 - [gcc](https://gcc.gnu.org/install/binaries.html) & [golang](https://go.dev/doc/install) for ebiten
 - [docker](https://docs.docker.com/get-docker/) to start kafka, schema-registry, akhq, postgres, adminer
