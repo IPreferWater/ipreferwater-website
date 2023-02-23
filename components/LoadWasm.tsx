@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Script from 'next/script'
+//https://github.com/microsoft/TypeScript/issues/42209
+declare global { const Go: any }
 
 const LoadWasm = () => {
   const [wasmModule, setWasmModule] = useState<WebAssembly.Module | null>(null);
