@@ -31,7 +31,7 @@ export default function BlogPost({postData,content}:BlogProps) {
 
     return (
       
-      <Layout>
+      <Layout title="IPreferWater Blog">
           <div className="flex flex-col w-full">
               <div className='prose prose-xl mx-auto prose-a:underline prose-a:decoration-orange-500 prose-a:decoration-2 prose:text-center' dangerouslySetInnerHTML={{__html:content}}/>
               <div className='mx-auto' >{getComponent(postData.component)}</div>
