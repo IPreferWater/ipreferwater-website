@@ -13,7 +13,7 @@ During the winter months, oyster farms are at an increased risk of theft due to 
 We need a protocol to receive information from sensors and alert in case of threats.
 
 ### Functionnal Explications
-The [github](https://github.com/IPreferWater/oyser-guardian) with the source.
+The [github](https://github.com/IPreferWater/oyster-guardian) with the source.
 
 Imagine a device with a camera that tracks the entry of your farm.
 
