@@ -10,6 +10,8 @@ icon: string
 
 export type ITimetable = {
   dayTimetables: Array<IDayTimetable>
+  eventIds: IEventIds
+  placeIds: IPlaceIds
 }
 
 export type IDayTimetable = {
@@ -20,17 +22,21 @@ export type IDayTimetable = {
 export type IEvent = {
   start: string
   end: string
-  id: string
+  eventId: string
   placeId: string
 }
 
-export type IEventId = {
+export type IEventIds = {
  [key : string]: IInfoEvent
 }
 
 export type IInfoEvent = {
-  labels: Array<[key : string]>
+  labels: IEventLabel
   color: string
+ }
+
+ export type IEventLabel = {
+  [key : string] : string
  }
 
  export type IPlaceIds = {
@@ -42,3 +48,11 @@ export type IInfoEvent = {
   address: string
   gmap: string
  }
+
+ export type IEventUpdated = {
+  start: string
+  end: string
+  eventLabel: string
+  color: string
+  place: IInfoPlace
+}

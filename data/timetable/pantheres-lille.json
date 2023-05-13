@@ -6,7 +6,7 @@
         {
           "start":"18h30",
           "end":"20h00",
-          "eventIds":"jjb",
+          "eventId":"jjb",
           "placeId":"wazemme"
         }
     ]
@@ -17,7 +17,7 @@
         {
           "start":"19h00",
           "end":"21h00",
-          "eventIds":"jjb",
+          "eventId":"jjb",
           "placeId":"denis"
         }
       ]
@@ -29,25 +29,25 @@
           "FR":"Jujitsu brésilien",
           "EN":"Brazilian jujitsu"
         },
-        "color": "orange"
+        "color": "red-500"
       },
       "grappling" : {
         "labels":{
           "FR":"Grappling",
           "EN":"Grappling"
         },
-        "color": "orange"
+        "color": "purple-300"
       }
     },
     "placeIds" : {
       "wazemme": {
         "label":"Dojo Roger Salengro",
-        "adresse" : "Complexe Sportif, 62 Rue d'Iéna, 59000 Lille",
+        "adress" : "Complexe Sportif, 62 Rue d'Iéna, 59000 Lille",
         "gMap":"https://www.google.com/maps/place/PANTHER'S+Club+Lille/@50.6221277,3.0468976,323m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47c2d575984c9389:0x9059d8927bccbf07!2sRue+d'I%C3%A9na,+59000+Lille!3b1!8m2!3d50.6224266!4d3.0476082!16s%2Fg%2F1tplpgfp!3m5!1s0x47c2d575bc68dccd:0x162de623e12e38fe!8m2!3d50.6223195!4d3.0475388!16s%2Fg%2F11dy1crptv"
       },
       "denis": {
         "label":"Salle Denis Cordonnier",
-        "adresse" : "52 Bd de Strasbourg, 59000 Lille",
+        "adress" : "52 Bd de Strasbourg, 59000 Lille",
         "gMap":"https://www.google.com/maps/place/Salle+Denis+Cordonnier/@50.6177655,3.0574702,278m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47c2d575984c9389:0x9059d8927bccbf07!2sRue+d'I%C3%A9na,+59000+Lille!3b1!8m2!3d50.6224266!4d3.0476082!16s%2Fg%2F1tplpgfp!3m5!1s0x47c2d5a212fcf731:0x5d18f33f9570e9e3!8m2!3d50.6176079!4d3.0583668!16s%2Fg%2F1tcxnv1c"
       }
     }
