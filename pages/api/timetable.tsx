@@ -26,4 +26,3 @@ export function getTimetableData(id:number) {
   const planing: ITimetable = JSON.parse(timetableString);
   return planing
 }
-

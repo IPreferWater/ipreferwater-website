@@ -5,15 +5,14 @@ type EventProps = {
 }
   
   export function TimetableEvent({event}:EventProps) {
-    
-    return (
-      <div className={`bg-${event.color}`}>
-              <span className={`font-semibold`}>
-                {event.eventLabel} {event.start} - {event.end}
-              </span>
-              <span>{event.place.label}</span>
-              <span>{event.place.address}</span>
-              </div>
 
+    return (
+      <div className={`flex flex-col bg-${event.color}`}>
+              <div className={`font-semibold`}>
+                {event.eventLabel} 
+              </div>
+              <div>{event.start} - {event.end}</div>
+              <a className='underline decoration-sky-500' href={event.place.gmap} target='_blank'>{event.place.label}</a>
+              </div>
 )
   }

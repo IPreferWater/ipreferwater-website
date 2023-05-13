@@ -1,5 +1,7 @@
 
 import { IDayTimetable, IEvent, IEventIds, IEventUpdated, IPlaceIds } from '../../interfaces'
+import { getLabelDayByLanguage } from '../../pages/api/util'
+
 import { TimetableEvent } from './TimetableEvent'
 
 type PlanningDayProps = {
@@ -10,9 +12,15 @@ type PlanningDayProps = {
 }
   
   export function Day({day, eventIds, placeIds, language}:PlanningDayProps) {
-
+    
+    
     function updateEventsIdsAndPlaceIds(event :IEvent) : IEventUpdated{
+
         const eventID = eventIds[event.eventId]
+
+        if (eventID == null){
+          console.log(`can't find the id ${event.eventId} in  event \n ${JSON.stringify(event)} \n in list of eventID \n${JSON.stringify(eventIds)}`)
+        }
         const place = placeIds[event.placeId]
 
          return {
@@ -29,7 +37,7 @@ type PlanningDayProps = {
       <div className="px-6 py-4 pb-16">
         <div className="flex flex-row justify-between">
           <div className="font-bold text-xl mb-2">
-             getLabelDayWithID {day.dayID}
+             {getLabelDayByLanguage(day.dayID, language)}
           </div>
           <div className="text-xs"></div>
         </div>

@@ -15,7 +15,7 @@ export type ITimetable = {
 }
 
 export type IDayTimetable = {
-  dayID: string
+  dayID: number
   events: Array<IEvent>
 }
 

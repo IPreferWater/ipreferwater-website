@@ -11,7 +11,6 @@ type TimetableProps = {
 }
 export default function TimeTablePage ({timetable, id}: TimetableProps) {
 
-  //TODO should we add a default language on timetable ?
   const [language, setlanguage] = React.useState("FR");
   
   const onChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
@@ -33,10 +32,14 @@ export default function TimeTablePage ({timetable, id}: TimetableProps) {
              <Day  key={index} day={day} eventIds={timetable.eventIds} placeIds={timetable.placeIds} language={language}/>
              )}
         </div>
-    {timetable.dayTimetables.map((day, index) => 
-             //<PlanningDay  key={index} day={day} id={id} dayNumber={index+1}/>
-             day.dayID
-             )}
+
+    <div className='flex flex-col'>
+    {Object.values(timetable.placeIds).map((place, index) => (
+        <a key={index} href={place.gmap} className='underline decoration-sky-500'>
+          {place.label} - {place.address}
+        </a>
+      ))}
+    </div>
 
   </Layout>
 }
