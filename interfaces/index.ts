@@ -1,14 +1,3 @@
-// You can include shared interfaces/types in a separate file
-// and then use them in any component by importing them. For
-// example, to import the interface below do:
-//
-// import { User } from 'path/to/interfaces';
-
-export type User = {
-  id: number
-  name: string
-}
-
 export type Post = {
   id: string,
   title: string
@@ -19,11 +8,51 @@ category: string
 icon: string
 }
 
-export type Product = {
-  name: string
-  price: number
-  image: string
-  sku: string
-  currency: string
-  id: string
+export type ITimetable = {
+  dayTimetables: Array<IDayTimetable>
+  eventIds: IEventIds
+  placeIds: IPlaceIds
+}
+
+export type IDayTimetable = {
+  dayID: number
+  events: Array<IEvent>
+}
+
+export type IEvent = {
+  start: string
+  end: string
+  eventId: string
+  placeId: string
+}
+
+export type IEventIds = {
+ [key : string]: IInfoEvent
+}
+
+export type IInfoEvent = {
+  labels: IEventLabel
+  color: string
+ }
+
+ export type IEventLabel = {
+  [key : string] : string
+ }
+
+ export type IPlaceIds = {
+  [key : string]: IInfoPlace
+ }
+
+ export type IInfoPlace = {
+  label: string
+  address: string
+  gmap: string
+ }
+
+ export type IEventUpdated = {
+  start: string
+  end: string
+  eventLabel: string
+  color: string
+  place: IInfoPlace
 }

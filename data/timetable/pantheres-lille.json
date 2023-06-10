@@ -1,0 +1,162 @@
+{
+    "dayTimetables": [
+        {
+      "dayID":1,
+      "events": [
+        {
+          "start":"18h30",
+          "end":"20h00",
+          "eventId":"jjb",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"20h15",
+          "end":"21h45",
+          "eventId":"boxtai",
+          "placeId":"wazemme"
+        }
+    ]
+    },
+    {
+      "dayID":2,
+      "events": [
+        {
+          "start":"19h00",
+          "end":"21h00",
+          "eventId":"jjb",
+          "placeId":"denis"
+        }
+      ]
+    },
+    {
+      "dayID":3,
+      "events": [
+        {
+          "start":"18h30",
+          "end":"20h00",
+          "eventId":"nogi",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"20h15",
+          "end":"21h45",
+          "eventId":"boxtai",
+          "placeId":"wazemme"
+        }
+    ]
+    },
+    {
+      "dayID":4,
+      "events": [
+        {
+          "start":"18h00",
+          "end":"19h00",
+          "eventId":"boxtaikid",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"19h00",
+          "end":"21h00",
+          "eventId":"nogi",
+          "placeId":"denis"
+        }
+      ]
+    },
+    {
+      "dayID":5,
+      "events": [
+        {
+          "start":"19h00",
+          "end":"20h30",
+          "eventId":"jjb",
+          "placeId":"jardin"
+        },
+        {
+          "start":"19h00",
+          "end":"20h30",
+          "eventId":"boxtai",
+          "placeId":"wazemme"
+        }
+      ]
+    },
+    {
+      "dayID":6,
+      "events": [
+        {
+          "start":"11h00",
+          "end":"12h30",
+          "eventId":"boxtaigirl",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"15h15",
+          "end":"16h15",
+          "eventId":"boxtaikid",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"16h30",
+          "end":"17h30",
+          "eventId":"boxtaikid",
+          "placeId":"wazemme"
+        }
+      ]
+    }
+  
+  ],
+    "eventIds" : {
+  
+      "jjb" : {
+        "labels":{
+          "FR":"Jujitsu brésilien",
+          "EN":"Brazilian jujitsu"
+        },
+        "color": "blue"
+      },
+      "nogi" : {
+        "labels":{
+          "FR":"Grappling",
+          "EN":"Grappling"
+        },
+        "color": "purple"
+      },
+      "boxtai" : {
+        "labels":{
+          "FR":"Muay-Thaï",
+          "EN":"Muay-Thaï"
+        },
+        "color": "red"
+      },
+      "boxtaikid" : {
+        "labels":{
+          "FR":"Muay-Thaï enfant",
+          "EN":"Muay-Thaï kid"
+        },
+        "color": "red"
+      },
+      "boxtaigirl" : {
+        "labels":{
+          "FR":"Muay-Thaï fille",
+          "EN":"Muay-Thaï girl"
+        },
+        "color": "pink"
+      }
+    },
+    "placeIds" : {
+      "wazemme": {
+        "label":"Dojo Roger Salengro",
+        "address" : "Complexe Sportif, 62 Rue d'Iéna, 59000 Lille",
+        "gmap":"https://www.google.com/maps/place/PANTHER'S+Club+Lille/@50.6221277,3.0468976,323m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47c2d575984c9389:0x9059d8927bccbf07!2sRue+d'I%C3%A9na,+59000+Lille!3b1!8m2!3d50.6224266!4d3.0476082!16s%2Fg%2F1tplpgfp!3m5!1s0x47c2d575bc68dccd:0x162de623e12e38fe!8m2!3d50.6223195!4d3.0475388!16s%2Fg%2F11dy1crptv"
+      },
+      "denis": {
+        "label":"Salle Denis Cordonnier",
+        "address" : "52 Bd de Strasbourg, 59000 Lille",
+        "gmap":"https://www.google.com/maps/place/Salle+Denis+Cordonnier/@50.6177655,3.0574702,278m/data=!3m1!1e3!4m15!1m8!3m7!1s0x47c2d575984c9389:0x9059d8927bccbf07!2sRue+d'I%C3%A9na,+59000+Lille!3b1!8m2!3d50.6224266!4d3.0476082!16s%2Fg%2F1tplpgfp!3m5!1s0x47c2d5a212fcf731:0x5d18f33f9570e9e3!8m2!3d50.6176079!4d3.0583668!16s%2Fg%2F1tcxnv1c"
+      },
+      "jardin": {
+        "label":"Jardin des sports",
+        "address" : "23 Bd de Metz, 59000 Lille",
+        "gmap":"https://www.google.com/maps/place/50%C2%B037'14.3%22N+3%C2%B002'17.0%22E/@50.6206511,3.0354625,17z/data=!3m1!4b1!4m4!3m3!8m2!3d50.6206511!4d3.0380428?hl=fr&entry=ttu"
+      }
+    }
+    }
