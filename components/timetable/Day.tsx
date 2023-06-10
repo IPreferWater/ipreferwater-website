@@ -17,10 +17,6 @@ type PlanningDayProps = {
     function updateEventsIdsAndPlaceIds(event :IEvent) : IEventUpdated{
 
         const eventID = eventIds[event.eventId]
-
-        if (eventID == null){
-          console.log(`can't find the id ${event.eventId} in  event \n ${JSON.stringify(event)} \n in list of eventID \n${JSON.stringify(eventIds)}`)
-        }
         const place = placeIds[event.placeId]
 
          return {
@@ -32,19 +28,19 @@ type PlanningDayProps = {
          } as IEventUpdated;
       }
     
-    return (<div className="min-h-200 min-w-200 rounded overflow-hidden shadow-lg relative">
+    return (<div className="rounded overflow-hidden shadow-lg relative">
   
-      <div className="px-6 py-4 pb-16">
-        <div className="flex flex-row justify-between">
+      <div className="px-2 py-4 pb-16">
+        <div className="flex flex-row">
           <div className="font-bold text-xl mb-2">
              {getLabelDayByLanguage(day.dayID, language)}
           </div>
           <div className="text-xs"></div>
         </div>
   
-        <ul className={`min-h-32 min-w-32`}>
+        <ul>
           {day.events.map((event, i) =>
-            <li key={i} className={`flex flex-col text-center rounded-lg text-beach-grey p-2 mb-2 todo-color}`}>
+            <li key={i} className={`text-center mx-2 my-4`}>
               <TimetableEvent event={updateEventsIdsAndPlaceIds(event)}/>
             </li>
           )}

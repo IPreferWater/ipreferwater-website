@@ -111,35 +111,35 @@
           "FR":"Jujitsu brésilien",
           "EN":"Brazilian jujitsu"
         },
-        "color": "blue-300"
+        "color": "blue"
       },
       "nogi" : {
         "labels":{
           "FR":"Grappling",
           "EN":"Grappling"
         },
-        "color": "purple-300"
+        "color": "purple"
       },
       "boxtai" : {
         "labels":{
           "FR":"Muay-Thaï",
           "EN":"Muay-Thaï"
         },
-        "color": "red-300"
+        "color": "red"
       },
       "boxtaikid" : {
         "labels":{
           "FR":"Muay-Thaï enfant",
           "EN":"Muay-Thaï kid"
         },
-        "color": "red-200"
+        "color": "red"
       },
       "boxtaigirl" : {
         "labels":{
           "FR":"Muay-Thaï fille",
           "EN":"Muay-Thaï girl"
         },
-        "color": "pink-200"
+        "color": "pink"
       }
     },
     "placeIds" : {
@@ -156,7 +156,7 @@
       "jardin": {
         "label":"Jardin des sports",
         "address" : "23 Bd de Metz, 59000 Lille",
-        "gmap":"50.620651125644066, 3.038042846157788"
+        "gmap":"https://www.google.com/maps/place/50%C2%B037'14.3%22N+3%C2%B002'17.0%22E/@50.6206511,3.0354625,17z/data=!3m1!4b1!4m4!3m3!8m2!3d50.6206511!4d3.0380428?hl=fr&entry=ttu"
       }
     }
     }
