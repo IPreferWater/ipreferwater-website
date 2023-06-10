@@ -37,7 +37,7 @@ export default function TimeTablePage ({timetable, id}: TimetableProps) {
 
   return <Layout title={`Timetable ${id}`}>
     <div className='m-2'>
-    <h1 className='font-bol text-2xl'>{labels[language].title}</h1>
+    <h1 className='font-bol text-2xl'>{labels[language].title} {id}</h1>
 
 <select name="language" id="language-select" onChange={onChangeLanguage}>
     <option  value="FR">Français 🇫🇷</option>
