@@ -3,6 +3,7 @@ import { getAllTimetableIds, getTimetableData } from '../api/timetable'
 import { ITimetable } from '../../interfaces'
 import { Day } from '../../components/timetable/Day'
 import React from 'react'
+import { PricesByYear } from '../../components/timetable/PricesByYear'
 
 type TimetableProps = {
   timetable: ITimetable,
@@ -13,6 +14,7 @@ interface ILabels {
   [key: string]: {
     title: string;
     places: string;
+    prices: string;
   };
 }
 
@@ -22,14 +24,16 @@ export default function TimeTablePage ({timetable, id}: TimetableProps) {
   const labels: ILabels = {
     'FR': {
       "title": "planning",
-      "places":"lieux d'entrainements"
+      "places":"lieux d'entrainements",
+      "prices":"tarifs"
     },
     'EN': {
       "title": "timetable",
-      "places":"places of training"
+      "places":"places of training",
+      "prices":"prices"
     }
   }
-  
+
   const onChangeLanguage = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const value = event.target.value;
     setlanguage(value);
@@ -42,10 +46,10 @@ export default function TimeTablePage ({timetable, id}: TimetableProps) {
 <select name="language" id="language-select" onChange={onChangeLanguage}>
     <option  value="FR">Français 🇫🇷</option>
     <option value="EN">English 🇬🇧</option>
-</select> 
+</select>
 
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-7 gap-2">
-            {timetable.dayTimetables.map((day, index) => 
+            {timetable.dayTimetables.map((day, index) =>
              <Day  key={index} day={day} eventIds={timetable.eventIds} placeIds={timetable.placeIds} language={language}/>
              )}
         </div>
@@ -58,14 +62,17 @@ export default function TimeTablePage ({timetable, id}: TimetableProps) {
         </a>
       ))}
     </div>
+
+      <PricesByYear bla="todo" />
+
     </div>
   </Layout>
 }
 
 export async function getStaticProps(context:any) {
   const id = context.params.id
-    const timetable = getTimetableData(id)    
-    
+    const timetable = getTimetableData(id)
+
     return {
       props: {
         timetable,

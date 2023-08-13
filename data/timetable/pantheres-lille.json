@@ -19,18 +19,23 @@
     },
     {
       "dayID":2,
-      "events": [
-        {
-          "start":"19h00",
-          "end":"21h00",
-          "eventId":"jjb",
-          "placeId":"denis"
-        }
-      ]
+      "events": []
     },
     {
       "dayID":3,
       "events": [
+        {
+          "start":"16h15",
+          "end":"17h00",
+          "eventId":"boxtaikid-8-11",
+          "placeId":"wazemme"
+        },
+        {
+          "start":"17h00",
+          "end":"18h00",
+          "eventId":"boxtaikid-12-15",
+          "placeId":"wazemme"
+        },
         {
           "start":"18h30",
           "end":"20h00",
@@ -47,20 +52,7 @@
     },
     {
       "dayID":4,
-      "events": [
-        {
-          "start":"18h00",
-          "end":"19h00",
-          "eventId":"boxtaikid",
-          "placeId":"wazemme"
-        },
-        {
-          "start":"19h00",
-          "end":"21h00",
-          "eventId":"nogi",
-          "placeId":"denis"
-        }
-      ]
+      "events": []
     },
     {
       "dayID":5,
@@ -91,55 +83,62 @@
         {
           "start":"15h15",
           "end":"16h15",
-          "eventId":"boxtaikid",
+          "eventId":"boxtaikid-8-11",
           "placeId":"wazemme"
         },
         {
           "start":"16h30",
           "end":"17h30",
-          "eventId":"boxtaikid",
+          "eventId":"boxtaikid-12-15",
           "placeId":"wazemme"
         }
       ]
     }
-  
+
   ],
     "eventIds" : {
-  
+
       "jjb" : {
         "labels":{
           "FR":"Jujitsu brésilien",
           "EN":"Brazilian jujitsu"
         },
-        "color": "blue"
+        "color": "bg-blue-200"
       },
       "nogi" : {
         "labels":{
           "FR":"Grappling",
           "EN":"Grappling"
         },
-        "color": "purple"
+        "color": "bg-purple-200"
       },
       "boxtai" : {
         "labels":{
           "FR":"Muay-Thaï",
           "EN":"Muay-Thaï"
         },
-        "color": "red"
+        "color": "bg-red-300"
       },
-      "boxtaikid" : {
+      "boxtaikid-8-11" : {
         "labels":{
-          "FR":"Muay-Thaï enfant",
-          "EN":"Muay-Thaï kid"
+          "FR":"Muay-Thaï enfant 8-11 ans",
+          "EN":"Muay-Thaï kid 8-11 years old"
         },
-        "color": "red"
+        "color": "bg-yellow-400"
+      },
+      "boxtaikid-12-15" : {
+        "labels":{
+          "FR":"Muay-Thaï enfant 12-15 ans",
+          "EN":"Muay-Thaï kid 12-15 years old"
+        },
+        "color": "bg-orange-200"
       },
       "boxtaigirl" : {
         "labels":{
           "FR":"Muay-Thaï fille",
           "EN":"Muay-Thaï girl"
         },
-        "color": "pink"
+        "color": "bg-red-200"
       }
     },
     "placeIds" : {
@@ -158,5 +157,15 @@
         "address" : "23 Bd de Metz, 59000 Lille",
         "gmap":"https://www.google.com/maps/place/50%C2%B037'14.3%22N+3%C2%B002'17.0%22E/@50.6206511,3.0354625,17z/data=!3m1!4b1!4m4!3m3!8m2!3d50.6206511!4d3.0380428?hl=fr&entry=ttu"
       }
-    }
+    },
+    "prices" : [
+      {
+       "label":"title1",
+        "price" : 2
+      },
+      {
+        "label":"title5",
+         "price" : 5
+       }
+    ]
     }

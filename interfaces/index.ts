@@ -12,6 +12,7 @@ export type ITimetable = {
   dayTimetables: Array<IDayTimetable>
   eventIds: IEventIds
   placeIds: IPlaceIds
+  prices: Array<IPrices>
 }
 
 export type IDayTimetable = {
@@ -47,6 +48,11 @@ export type IInfoEvent = {
   label: string
   address: string
   gmap: string
+ }
+
+ export type IPrices = {
+  label: string
+  price: number
  }
 
  export type IEventUpdated = {
