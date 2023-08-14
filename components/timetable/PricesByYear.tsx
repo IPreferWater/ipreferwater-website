@@ -19,13 +19,13 @@ type PricesByYearProps = {
 
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    A Partir de Septembre 2022
+                    A Partir de Septembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Décembre 2022
+                A Partir de Décembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Mars 2023
+                A Partir de Mars 2024
                 </th>
             </tr>
         </thead>
@@ -87,13 +87,13 @@ type PricesByYearProps = {
 
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    A Partir de Septembre 2022
+                    A Partir de Septembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Décembre 2022
+                A Partir de Décembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Mars 2023
+                A Partir de Mars 2024
                 </th>
             </tr>
         </thead>
@@ -158,13 +158,13 @@ type PricesByYearProps = {
 
                 </th>
                 <th scope="col" className="px-6 py-3">
-                    A Partir de Septembre 2022
+                    A Partir de Septembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Décembre 2022
+                A Partir de Décembre 2023
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Mars 2023
+                A Partir de Mars 2024
                 </th>
             </tr>
         </thead>
