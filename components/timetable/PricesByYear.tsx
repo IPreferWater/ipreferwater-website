@@ -78,7 +78,7 @@ type PricesByYearProps = {
     </div>
 
 <div className="m-4">
-    <h1 className="text-2xl font-bold">Tarifs inscriptions enfants ( 8 - 15 ans)</h1>
+    <h1 className="text-2xl font-bold">Tarifs inscriptions enfants ( 8 - 15 ans )</h1>
     <div className="relative overflow-x-auto">
     <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
@@ -187,6 +187,10 @@ type PricesByYearProps = {
     </table>
     </div>
     </div>
+
+    <div className="m-4 py-8">
+  <h1 className="text-2xl font-bold ">Tarifs cours d'essais / visite 5€</h1>
+  </div>
 </div>
 
 
