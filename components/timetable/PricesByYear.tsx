@@ -180,7 +180,7 @@ type PricesByYearProps = {
                     80€
                 </td>
                 <td className="px-6 py-4">
-                    80€
+                    70€
                 </td>
             </tr>
         </tbody>
