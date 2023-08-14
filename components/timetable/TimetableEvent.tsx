@@ -20,6 +20,8 @@ type EventProps = {
           return 'bg-orange-200'
           case 'bg-red-200':
           return 'bg-red-200'
+          case 'bg-violet-400':
+            return 'bg-violet-400'
       }
 
 

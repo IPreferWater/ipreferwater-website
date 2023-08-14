@@ -22,7 +22,7 @@ type PricesByYearProps = {
                     A Partir de Septembre 2022
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Janvier 2023
+                A Partir de Décembre 2022
                 </th>
                 <th scope="col" className="px-6 py-3">
                 A Partir de Mars 2023
@@ -90,7 +90,7 @@ type PricesByYearProps = {
                     A Partir de Septembre 2022
                 </th>
                 <th scope="col" className="px-6 py-3">
-                A Partir de Janvier 2023
+                A Partir de Décembre 2022
                 </th>
                 <th scope="col" className="px-6 py-3">
                 A Partir de Mars 2023
@@ -147,6 +147,46 @@ type PricesByYearProps = {
 
 
 </div>
+
+<div className="m-4">
+  <h1 className="text-2xl font-bold">Tarifs inscriptions cours 100% filles du samedi</h1>
+<div className="relative overflow-x-auto">
+    <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
+            <tr>
+                <th scope="col" className="px-6 py-3">
+
+                </th>
+                <th scope="col" className="px-6 py-3">
+                    A Partir de Septembre 2022
+                </th>
+                <th scope="col" className="px-6 py-3">
+                A Partir de Décembre 2022
+                </th>
+                <th scope="col" className="px-6 py-3">
+                A Partir de Mars 2023
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr className="bg-white dark:bg-gray-800">
+                <th scope="row" className="pl-6 pr-32 py-4 font-semibold text-gray-900 whitespace-nowrap dark:text-white">
+                Muay-Thaï 100% filles
+                </th>
+                <td className="px-6 py-4">
+                    100€
+                </td>
+                <td className="px-6 py-4">
+                    80€
+                </td>
+                <td className="px-6 py-4">
+                    80€
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    </div>
 </div>
 
 

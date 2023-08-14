@@ -19,7 +19,14 @@
     },
     {
       "dayID":2,
-      "events": []
+      "events": [
+         {
+          "start":"19h00",
+          "end":"21h00",
+          "eventId":"jjb-nogi-comp",
+          "placeId":"denis"
+        }   
+      ]
     },
     {
       "dayID":3,
@@ -52,7 +59,14 @@
     },
     {
       "dayID":4,
-      "events": []
+      "events": [
+        {
+          "start":"19h00",
+          "end":"21h00",
+          "eventId":"jjb-nogi-comp",
+          "placeId":"denis"
+        }
+      ]
     },
     {
       "dayID":5,
@@ -111,6 +125,13 @@
           "EN":"Grappling"
         },
         "color": "bg-purple-200"
+      },
+      "jjb-nogi-comp" : {
+        "labels":{
+          "FR":"Jujitsu/Grappling compétiteur",
+          "EN":"Jujitsu/Grappling competition"
+        },
+        "color": "bg-violet-400"
       },
       "boxtai" : {
         "labels":{
