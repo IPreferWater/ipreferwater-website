@@ -33,7 +33,7 @@ At worst, we had **11°** in the house and **3°** at the floor level ...
 
 So I contacted the owner ( a realestate company ) to see if I could buy the abandoned house but for historic reason I was able to only obtain the red-square part
 
-It took **only 2 years** ! Finding a falicitator for geometry / notary / real-estate / contacting neighbours... In the meantime, the real estate agent was thanked with a **thank you bye** letter from his boss for his wonderfull work
+It took **only 2 years** ! Finding a falicitator for geometry / notary / real-estate / contacting neighbours...
 
 As a **total noob** in using my hands somewhere else than a keyboard, I will be accompanied by my father during the process. All the decisions were made based on his experience and civil engineering ref I could find on internet
 
@@ -71,8 +71,6 @@ To proove that I'm wiling to do it, they just want a **paper with an estimation 
 Problem : absolutely nobody want to do the job, it's too small for them.
 
 So let's see how to do a nice wall
-
-*When I gave them the paper from the only mason that agreed to come, they finaly asked me to give them 2 papers, one for the inside wall & one for the outside. I asked them if they needed a paper for each block of concrete and they gave up their new brillant idea*
 
 ![dig foundation](/blog/home-work/dig_foundation.webp)
 
